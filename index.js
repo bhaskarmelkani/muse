@@ -3,21 +3,21 @@ require('./text-polyfill');
 const noble = require('noble');
 const bleat = require('bleat').webbluetooth;
 const { MUSE_SERVICE, MuseClient, zipSamples, channelNames,  MuseControlResponse, EEGSample } = require('muse-js');
-const { map, share, tap, takeUntil } = require('rxjs/operators');
 
 async function connect() {
-    console.log('Connect called')
+    console.log('Connecting...')
     let device = await bleat.requestDevice({
         filters: [{ services: [MUSE_SERVICE] }]
     });
+
     const gatt = await device.gatt.connect();
-    console.log('Connected Device name:', gatt.device.name);
+    console.log('Connected to Device name:', gatt.device.name);
 
     const client = new MuseClient();
     await client.connect(gatt);
     client.controlResponses.subscribe(x => console.log('Response:', x));
     await client.start();
-    console.log('Connected!');
+    console.log('Client Started!');
 
     const keepaliveTimer = setInterval(() => client.sendCommand(''), 3000);
 
