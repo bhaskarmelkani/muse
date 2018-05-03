@@ -1,0 +1,26 @@
+{
+  "name": "muse",
+  "version": "1.0.0",
+  "description": "Muse controller",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhaskarmelkani/muse.git"
+  },
+  "author": "bhaskarmelkani <melkani.bhaskar@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhaskarmelkani/muse/issues"
+  },
+  "homepage": "https://github.com/bhaskarmelkani/muse#readme",
+  "dependencies": {
+    "bleat": "^0.1.8",
+    "muse-js": "^3.0.1",
+    "noble": "^1.9.1",
+    "rxjs": "^6.1.0",
+    "text-encoding": "^0.6.4"
+  }
+}
